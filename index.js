@@ -1,8 +1,15 @@
-function sortedArrayToBST(nums) {
-  if (nums.length === 0) return null;
-  const mid = Math.floor(nums.length / 2);
-  const root = new TreeNode(nums[mid]);
-  root.left = sortedArrayToBST(nums.slice(0, mid));
-  root.right = sortedArrayToBST(nums.slice(mid + 1));
-  return root;
+function removeNthFromEnd(head, n) {
+  const dummy = new ListNode(0);
+  dummy.next = head;
+  let first = dummy;
+  let second = dummy;
+  for (let i = 1; i <= n + 1; i++) {
+    first = first.next;
+  }
+  while (first !== null) {
+    first = first.next;
+    second = second.next;
+  }
+  second.next = second.next.next;
+  return dummy.next;
 }
