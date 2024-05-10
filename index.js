@@ -1,9 +1,6 @@
-function squareDigits(num) {
-  return parseInt(
-    num
-      .toString()
-      .split("")
-      .map((digit) => digit ** 2)
-      .join(""),
-  );
+function linearSearch(arr, target) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === target) return i;
+  }
+  return -1;
 }
